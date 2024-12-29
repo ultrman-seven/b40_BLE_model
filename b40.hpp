@@ -31,6 +31,7 @@ public:
     void reset();
     void setName(const char *);
     void getName(char *buf, uint32_t len);
+    void disconnect(void);
     // ~B40();
 };
 

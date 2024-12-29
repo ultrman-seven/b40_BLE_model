@@ -27,6 +27,15 @@ void B40::config(B40CfgsType *cfgs, uint32_t cgfLen, const char *name)
 
 B40CfgsType __rbt = B40_AT_reboot();
 
+void B40::disconnect()
+{
+        AT = 0;
+    sys::delayMs(800);
+    AT = 1;
+    sys::delayMs(200);
+    com << "AT+DISCONN=1\r\n";
+}
+
 void B40::reset()
 {
     if (rst.available())
