@@ -34,6 +34,7 @@ void B40::disconnect()
     AT = 1;
     sys::delayMs(200);
     com << "AT+DISCONN=1\r\n";
+    com << "AT+TS=1\r\n";
 }
 
 void B40::reset()
